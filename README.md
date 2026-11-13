@@ -48,23 +48,6 @@ API/configuration errors print `ERROR` and exit 2. Behavior failures print
 runs. Evals inspect tool use and booking state, not an exact
 wording; they do not fully judge response quality. Read the conversations too.
 
-## Exercise
-
-1. **Get oriented (~5 minutes).** Fork/clone the repo, run the tests, and try a
-   conversation. Explain the customer workflow and where you'd look next.
-2. **Investigate and fix (~15 minutes).** The customer says the assistant isn't
-   always following their requirements. Run the evals, inspect the behavior,
-   and make a focused fix. Show before/after evidence and check another case.
-3. **Improve the experience (~20 minutes).** The customer says: “Our busy staff
-   find this agent tedious to use.” Ask the interviewer questions as the
-   customer, choose a small improvement, implement it, and show its value.
-
-Keep changes small. You can change prompts, tools, code, or evals where
-appropriate. Preserve meaningful checks and explain any changes to them.
-For the demo, explain what improved, how you checked it, and what you would
-still need before using it with real customers. Pause implementation for a
-short demo before time runs out; unfinished work can still be discussed.
-
 ## Files
 
 - `agent.py`: booking state, policy/seat tools, agent setup, terminal chat.
