@@ -12,6 +12,7 @@ from agents import Agent, ModelSettings, RunContextWrapper, Runner, function_too
 from agents import set_tracing_disabled
 from agents.exceptions import AgentsException
 from openai import OpenAIError
+from openai.types.shared import Reasoning
 
 set_tracing_disabled(True)
 PROMPT_PATH = Path(__file__).with_name("prompt.md")
@@ -58,8 +59,8 @@ def create_agent(instructions: str | None = None) -> Agent[Booking]:
     return Agent[Booking](
         name="Northstar Air support",
         instructions=PROMPT_PATH.read_text() if instructions is None else instructions,
-        model=os.environ.get("OPENAI_MODEL", "gpt-4.1-mini-2025-04-14"),
-        model_settings=ModelSettings(temperature=0, max_tokens=400),
+        model=os.environ.get("OPENAI_MODEL", "gpt-6.1-sol"),
+        model_settings=ModelSettings(reasoning=Reasoning(effort="low"), max_tokens=4096),
         tools=[lookup_policy, change_seat],
     )
 

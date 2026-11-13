@@ -32,8 +32,9 @@ python -m pip install -r requirements.txt
 The interviewer provides an API key separately. Set `OPENAI_API_KEY` in your
 shell without putting it in a source file or commit. The app reads environment
 variables directly; it does not load `.env` files. Live chats and evals make
-billable API calls. The default model is `gpt-4.1-mini-2025-04-14`; `OPENAI_MODEL` overrides
-it. Use the same model before and after your change. SDK tracing is disabled.
+billable API calls. The default model is `gpt-6.1-sol` with low reasoning effort;
+`OPENAI_MODEL` overrides it with a compatible reasoning model. Use the same
+model before and after your change. SDK tracing is disabled.
 
 ```bash
 python agent.py                  # chat; /booking shows local state; /quit exits
@@ -43,8 +44,8 @@ python evals.py --repeat 3       # check consistency across fresh sessions
 ```
 
 API/configuration errors print `ERROR` and exit 2. Behavior failures print
-`FAIL` and exit 1. A successful eval run exits 0. Live behavior can vary even
-with temperature zero. Evals inspect tool use and booking state, not an exact
+`FAIL` and exit 1. A successful eval run exits 0. Live behavior can vary between
+runs. Evals inspect tool use and booking state, not an exact
 wording; they do not fully judge response quality. Read the conversations too.
 
 ## Exercise
