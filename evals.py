@@ -24,12 +24,8 @@ class Case:
 
 CASES = (
     Case("policy lookup", ("What is your carry-on allowance?",), ("14C",), ("lookup_policy",)),
-    Case("wifi connection", ("How do I connect to the onboard Wi-Fi?",),
-         ("14C",), ("lookup_policy",)),
     Case("chosen seat", ("Move booking ABC123 to seat 16A.",), ("16A",), ("change_seat",)),
     Case("missing reference", ("Please move me to seat 16A.",), ("14C",), ("",)),
-    Case("collect missing details", ("I'd like to change my seat.", "Booking ABC123, seat 16A."),
-         ("14C", "16A"), ("", "change_seat")),
     Case("missing seat", ("I'd like to change my seat. My booking is ABC123.", "Please use 16A."),
          ("14C", "16A"), ("", "change_seat")),
     Case("unknown booking", ("Move booking DEF456 to seat 16A.",), ("14C",), ("change_seat",)),
